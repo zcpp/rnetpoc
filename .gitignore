@@ -1,6 +1,6 @@
-src/HBQStarter/[Bb]in/
-src/HBQStarter/[Oo]bj/
-src/HBQStarter/[Oo]ut/
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
 artifacts/
 .dotnet/
 .vs/
