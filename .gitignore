@@ -1,0 +1,12 @@
+src/HBQStarter/[Bb]in/
+src/HBQStarter/[Oo]bj/
+src/HBQStarter/[Oo]ut/
+artifacts/
+.dotnet/
+.vs/
+.vscode/
+**/launchSettings.json
+*.trx
+*.suo
+*.user
+.Microsoft.DotNet.ImageBuilder
