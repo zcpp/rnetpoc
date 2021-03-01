@@ -1,0 +1,3 @@
+线性回归	lm	lm(formula,data)
+逻辑回归	glm	glm(formula,data,family)
+混合线性模型	lme4	lmer(Y ~ V*N + (1|B/mainplot), data = oats) 

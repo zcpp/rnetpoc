@@ -29,6 +29,7 @@ namespace rnetpoc
                 {
                     Initialize();
                 }
+                rEngine.ClearGlobalEnvironment();
                 return rEngine;
             }
         }
@@ -39,7 +40,27 @@ namespace rnetpoc
             rEngine = REngine.GetInstance();
             // REngine requires explicit initialization.
             // You can set some parameters.
+
+            //RDotNet.StartupParameter param = new StartupParameter();
+            //param.Interactive = false;
+            //param.Quiet = true;
             rEngine.Initialize();
+            setRworkdirectory();
+        }
+
+        private void setRworkdirectory()
+        {
+            var scriptFolder = AppContext.BaseDirectory + "Scripts";
+            scriptFolder = scriptFolder.Replace(@"\", "/");
+            string result = "DEFAULT";
+            CharacterVector testResult = rEngine.Evaluate(@"getwd()").AsCharacter();
+            result = testResult.First();
+            Console.WriteLine("getwd========:" + result);
+
+            rEngine.Evaluate("setwd(\"" + scriptFolder + "\")");
+            testResult = rEngine.Evaluate(@"getwd()").AsCharacter();
+            result = testResult.First();
+            Console.WriteLine("getwd AGAIN========:" + result);
         }
 
         public void Dispose()
